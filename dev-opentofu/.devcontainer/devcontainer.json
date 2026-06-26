@@ -4,11 +4,17 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "hashicorp.terraform",
-        "opentofu.opentofu",
+        "opentofu.opentofu"
       ]
     }
   },
