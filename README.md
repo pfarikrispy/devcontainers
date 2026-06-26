@@ -11,7 +11,7 @@ This repository provides standardized, pre-configured development environments u
 ## Prerequisites
 
 - Install **DevPod**: [devpod.sh](https://devpod.sh/)
-- (Optional) Install **VSCodium** with the **Dev Containers** extension if running containers directly from the editor.
+- (Optional) Install **VSCodium** with the **DevPod Containers** extension (`3timeslazy.vscodium-devpodcontainers`) if running containers directly from the editor.
 
 ---
 
@@ -24,6 +24,7 @@ This repository contains multiple development environments, organized into subdi
 A development environment for working with **OpenTofu**.
 
 - **Features**:
+  - custom image based off of MS's Ubuntu (`26.04` aka resolute) image
   - OpenTofu CLI (installed and available on `PATH`)
   - Utilities: `curl`, `git`, `jq`, and `wget`
   - VSCodium extension: `opentofu.opentofu` for syntax highlighting, autocomplete, and formatting.
