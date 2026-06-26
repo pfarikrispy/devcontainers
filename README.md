@@ -4,7 +4,7 @@ https://containers.dev/
 
 # OpenTofu Dev Environment
 
-I want to work with devcontainers more coz I'm fed up setting up build envs I know too little about
+I want to work with devcontainers more coz I'm fed up setting up build envs I know too little about.
 
 This repository provides a standardized, pre-configured development environment for working with **OpenTofu** using Devcontainers and DevPod (or VSCodium).
 

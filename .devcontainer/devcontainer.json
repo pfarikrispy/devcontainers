@@ -1,0 +1,16 @@
+{
+  "name": "OpenTofu Dev Environment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "opentofu.opentofu",
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
