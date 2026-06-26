@@ -2,65 +2,75 @@
 
 https://containers.dev/
 
-# OpenTofu Dev Environment
-
 I want to work with devcontainers more coz I'm fed up setting up build envs I know too little about.
 
-This repository provides a standardized, pre-configured development environment for working with **OpenTofu** using Devcontainers and DevPod (or VSCodium).
-
-## Features
-
-The development container is built on top of Ubuntu and includes:
-- **OpenTofu** CLI (pre-installed and available on `PATH`)
-- Commonly used utility tools: `curl`, `git`, `jq`, and `wget`
-- Pre-installed VSCodium extension: `opentofu.opentofu` for syntax highlighting, autocomplete, and formatting.
+This repository provides standardized, pre-configured development environments using Devcontainers and DevPod (or VSCodium).
 
 ---
 
-## Getting Started
+## Prerequisites
 
-- Prerequisite: download and install [devpod.sh](https://devpod.sh/)
+- Install **DevPod**: [devpod.sh](https://devpod.sh/)
+- (Optional) Install **VSCodium** with the **Dev Containers** extension if running containers directly from the editor.
 
-### Using DevPod (Recommended)
+---
 
-1. Open **DevPod**.
-2. Add this workspace pointing to the local folder or repository:
-   ```bash
-   devpod up .
-   ```
-3. DevPod will build the container and automatically open your IDE (VSCodium) connected directly to the environment.
+## Environments
 
-### Using VSCodium / Dev Containers
+This repository contains multiple development environments, organized into subdirectories.
 
-1. Make sure you have the **Dev Containers** extension installed in VSCodium.
-2. Open this folder in VSCodium.
-3. Click the green indicator in the bottom-left corner and select **Reopen in Container**.
+### 1. OpenTofu Dev Environment (`dev-opentofu`)
+
+A development environment for working with **OpenTofu**.
+
+- **Features**:
+  - OpenTofu CLI (installed and available on `PATH`)
+  - Utilities: `curl`, `git`, `jq`, and `wget`
+  - VSCodium extension: `opentofu.opentofu` for syntax highlighting, autocomplete, and formatting.
+- **Start with DevPod**:
+  ```bash
+  devpod up ./dev-opentofu
+  ```
+
+---
+
+### 2. Go Dev Environment (`dev-golang`)
+
+A development environment for **Go** development.
+
+- **Features**:
+  - Go SDK (Official image)
+  - VSCodium extension: `golang.go` for autocomplete, linting, formatting, and debugging.
+- **Start with DevPod**:
+  ```bash
+  devpod up ./dev-golang
+  ```
+
+---
+
+## Alternative: Using VSCodium Dev Containers Extension
+
+If you prefer to run containers directly within VSCodium without the DevPod CLI:
+
+1. Open VSCodium.
+2. Open either the `dev-opentofu` or `dev-golang` subdirectory.
+3. Click the green indicator (bottom-left corner) and select **Reopen in Container**.
 
 ---
 
 ## Usage Examples
 
-Once connected inside the container, you have full access to `tofu`. Here are some basic commands:
-
-### Check OpenTofu Version
+### OpenTofu
+Once inside the `dev-opentofu` container, you can run standard tofu commands:
 ```bash
 tofu --version
-```
-
-### Initialize a Configuration
-Initialize a working directory containing OpenTofu configuration files:
-```bash
 tofu init
-```
-
-### Generate and Show an Execution Plan
-See what actions OpenTofu will take to match your configuration:
-```bash
 tofu plan
 ```
 
-### Apply the Changes
-Create or update your infrastructure:
+### Go
+Once inside the `dev-golang` container, you can run standard Go commands:
 ```bash
-tofu apply
+go version
+go run main.go
 ```
